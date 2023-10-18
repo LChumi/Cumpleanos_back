@@ -1,0 +1,20 @@
+2023-10-18T17:00:35.873-05:00  INFO 15796 --- [main] c.c.webapi.WebApiApplicationTests        : Starting WebApiApplicationTests using Java 17.0.8 with PID 15796 (started by Luis in C:\Users\Luis\Documents\GitHub\Cumpleanos_back\web-api)
+2023-10-18T17:00:35.876-05:00  INFO 15796 --- [main] c.c.webapi.WebApiApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2023-10-18T17:00:37.697-05:00  INFO 15796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18T17:00:37.815-05:00  INFO 15796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 3 JPA repository interfaces.
+2023-10-18T17:00:38.714-05:00  INFO 15796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18T17:00:39.386-05:00  INFO 15796 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@26e8ff8c
+2023-10-18T17:00:39.393-05:00  INFO 15796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18T17:00:39.594-05:00  INFO 15796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18T17:00:39.784-05:00  INFO 15796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-10-18T17:00:40.180-05:00  WARN 15796 --- [main] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-10-18T17:00:40.492-05:00  INFO 15796 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2023-10-18T17:00:40.493-05:00  WARN 15796 --- [main] org.hibernate.orm.deprecation            : HHH90000026: Oracle12cDialect has been deprecated; use org.hibernate.dialect.OracleDialect instead
+2023-10-18T17:00:42.592-05:00  INFO 15796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18T17:00:42.608-05:00  INFO 15796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T17:00:44.092-05:00  WARN 15796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18T17:00:46.050-05:00  INFO 15796 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-18T17:00:46.168-05:00  INFO 15796 --- [main] c.c.webapi.WebApiApplicationTests        : Started WebApiApplicationTests in 10.816 seconds (process running for 12.544)
+2023-10-18T17:00:46.547-05:00  INFO 15796 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T17:00:46.552-05:00  INFO 15796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18T17:00:46.631-05:00  INFO 15796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
