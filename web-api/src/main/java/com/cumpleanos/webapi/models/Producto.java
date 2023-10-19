@@ -11,7 +11,7 @@ import org.hibernate.annotations.Subselect;
 
 @Entity
 @Immutable
-@Subselect("SELECT V.SECUENCIA, V.PRO_ID, V.PRO_ID1, V.CXB, V.PRO_NOMBRE, V.BOD_CODIGO, V.BOD_ID, V.BOD_NOMBRE, V.PVP, V.PVD, V.UNIDAD, V.STOCK_DISP, V.STOCK_REAL FROM INV_PRODINFGEN_WEB_V V")
+@Subselect("SELECT V.SECUENCIA, V.PRO_ID, V.PRO_ID1, V.CXB, V.PRO_NOMBRE, V.BOD_CODIGO, V.BOD_ID, V.BOD_NOMBRE, V.PVP, V.PVD, V.UNIDAD, V.STOCK_DISP, V.STOCK_REAL, V.PRO_IMPUESTO FROM INV_PRODINFGEN_WEB_V V")
 @Data
 public class Producto {
 
@@ -54,5 +54,8 @@ public class Producto {
 
     @Column(name ="STOCK_REAL")
     private Integer stock_real;
+
+    @Column(name = "PRO_IMPUESTO")
+    private Integer pro_impuesto;
 
 }
