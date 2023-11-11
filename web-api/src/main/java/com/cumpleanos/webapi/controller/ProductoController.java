@@ -21,14 +21,19 @@ public class ProductoController {
 
     @GetMapping("/Buscar/{pro_id}/{bod_id}/barra/bodega")
     public ResponseEntity<Producto> buscarProducto(@PathVariable String pro_id,@PathVariable Long bod_id){
-        try{
-            Producto producto=productoService.getByBarraAndBod(pro_id, bod_id);
-            if (producto==null){
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        try {
+            Producto producto = productoService.getByBarraAndBod(pro_id, bod_id);
+            if (producto == null) {
+                // Intenta buscar agregando '0' al principio
+                producto = productoService.getByBarraAndBod('0' + pro_id, bod_id);
+                if (producto == null) {
+                    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                }
             }
-            return new ResponseEntity<>(producto,HttpStatus.OK);
-        }catch (Exception e){
-            LOG.error(e.getMessage());
+
+            return new ResponseEntity<>(producto, HttpStatus.OK);
+        } catch (Exception e) {
+            LOG.error("Error al buscar producto: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

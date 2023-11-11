@@ -18,7 +18,13 @@ public class ImageController {
         if (resource.exists()) {
             return ResponseEntity.ok(resource); // Devuelve la imagen si existe.
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            imagePath= "C:/Imagenes/" +'0'+ imageName;
+            FileSystemResource resource2 = new FileSystemResource(imagePath);
+            if (resource2.exists()){
+                return ResponseEntity.ok(resource2); // Devuelve la imagen si existe.
+            }else{
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
         }
     }
 }
