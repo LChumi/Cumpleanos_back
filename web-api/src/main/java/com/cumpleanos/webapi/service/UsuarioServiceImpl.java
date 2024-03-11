@@ -17,12 +17,6 @@ public class UsuarioServiceImpl extends GenericServiceImpl<Usuarios,Long>impleme
         return repository;
     }
 
-
-    @Override
-    public Usuarios getByUsr_id(String usr_id) {
-        return repository.findByUsr_id(usr_id);
-    }
-
     @Override
     public Usuarios login(String usuario, String password) {
         return repository.findByUsr_idAndUsr_clave(usuario, password);
