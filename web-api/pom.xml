@@ -11,7 +11,6 @@
 
 	<groupId>com.cumpleanos</groupId>
 	<artifactId>web-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>web-api</name>
 	<description>Api-Rest for Cumpleanos</description>
 	<properties>
@@ -38,13 +37,14 @@
 		</dependency>
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc8</artifactId>
+			<artifactId>ojdbc11</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<version>1.18.30</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -12,19 +12,28 @@ public class ImageController {
 
     @GetMapping(value = "/images/{imageName}", produces = "image/jpeg")
     public ResponseEntity<FileSystemResource> getImagen(@PathVariable String imageName) {
-        String imagePath = "C:/Imagenes/" + imageName;
-        FileSystemResource resource = new FileSystemResource(imagePath);
+        String basePath = "C:/Imagenes/";
 
+        // Imagen principal
+        FileSystemResource resource = new FileSystemResource(basePath + imageName);
         if (resource.exists()) {
-            return ResponseEntity.ok(resource); // Devuelve la imagen si existe.
-        } else {
-            imagePath= "C:/Imagenes/" +'0'+ imageName;
-            FileSystemResource resource2 = new FileSystemResource(imagePath);
-            if (resource2.exists()){
-                return ResponseEntity.ok(resource2); // Devuelve la imagen si existe.
-            }else{
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-            }
+            return ResponseEntity.ok(resource);
         }
+
+        // Variante con prefijo "0"
+        FileSystemResource resource2 = new FileSystemResource(basePath + "0" + imageName);
+        if (resource2.exists()) {
+            return ResponseEntity.ok(resource2);
+        }
+
+        // Imagen por defecto
+        FileSystemResource defaultResource = new FileSystemResource(basePath + "default.jpg");
+        if (defaultResource.exists()) {
+            return ResponseEntity.ok(defaultResource);
+        }
+
+        // Si incluso el default no existe, devuelve 404
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
+
 }
